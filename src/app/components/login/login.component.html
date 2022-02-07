@@ -1,0 +1,14 @@
+
+
+  <div class="login-page">
+    <h1 class="text-center">Login</h1>
+              <p class="text-muted text-center">Sign In to your account</p>
+    <div class="form">
+      <form class="login-form" [formGroup] = "form" (submit)="submit()">
+        <input  formControlName="username" type="text" placeholder="Username"/>
+        <input formControlName="password" type="password" placeholder="Password"/>
+        <button type="submit">login</button>
+        <p class="message">Not registered? <a routerLink="/register">Create an account</a></p>
+      </form>
+    </div>
+  </div>

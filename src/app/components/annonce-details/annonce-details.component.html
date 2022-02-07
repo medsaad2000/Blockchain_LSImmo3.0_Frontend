@@ -1,0 +1,96 @@
+<!-- <p>annonce-details works!</p>
+<p>{{contratId}}</p>
+<div  >
+    
+<p *ngIf="contrats.name"> {{contrats.name}}</p>
+<p *ngIf="contrats.description">{{contrats.description}}</p>
+<p></p>
+</div> -->
+<div class="alert alert-light alert-dismissible fade show text-center mb-30"><span class="alert-close" data-dismiss="alert"></span><i class="fe-icon-award"></i> <strong style="font-size: 1.4em;"></strong> </div>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<div class="container bootdey flex-grow-1 container-p-y">
+
+            <div class="media align-items-center py-3 mb-3">
+              <img  src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="d-block ui-w-100 rounded-circle">
+              <div class="media-body ml-4">
+                <h4 class="font-weight-bold mb-0">Owner Address<span class="text-muted font-weight-normal"></span></h4>
+                <div class="text-muted mb-2">{{contrats.ownerAddress}}</div>
+                
+                <a href="javascript:void(0)" class="btn btn-default btn-sm icon-btn"><i class="fa fa-mail"></i></a>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-body">
+                <table class="table user-view-table m-0">
+                  <tbody>
+                    <tr>
+                      <td>Titre:</td>
+                      <td>{{contrats.name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Buyer Address :</td>
+                        <td>{{contrats.buyerAddress}}</td>
+                      </tr>
+                      <tr>
+                    <tr>
+                      <td>Description :</td>
+                      <td>{{contrats.description}}</td>
+                    </tr>
+                    <tr>
+                        <td>Address :</td>
+                        <td>{{contrats.localisation}}</td>
+                      </tr>
+                      <tr>
+                        <td>Surface :</td>
+                        <td>{{contrats.surface}}</td>
+                      </tr>
+                      <tr>
+                        <td>Prix :</td>
+                        <td>{{contrats.price}}</td>
+                      </tr>
+                    <tr>
+                      <td>Verifié :</td>
+                      <td><span class="fa fa-check text-primary"></span>&nbsp; Yes</td>
+                    </tr>
+                    <tr>
+                      <td>Status :</td>
+                      <td><span class="badge badge-outline-success" >
+                        <ng-template [ngIf]="contrats.buyerAddress === '0x0000000000000000000000000000000000000000' " [ngIfElse]="elseBlock"> Active</ng-template>
+                        <ng-template #elseBlock> <strong style="color: red;">non Active</strong> (Acheté) <i class="fa fa-times-circle"></i></ng-template>
+                      </span> </td>
+
+                      <!--<td><span class="badge badge-outline-success" *ngIf="contrats.buyerAddress === '0x0000000000000000000000000000000000000000' ">Active</span></td>--->
+                      
+
+                    </tr>
+                  </tbody>
+               <br>
+            </table>
+
+            <div *ngIf="authenticated" class="form-group">
+              <form [formGroup]="formBuy" (submit)="submit()">
+                <ng-template [ngIf]="contrats.buyerAddress === '0x0000000000000000000000000000000000000000' " [ngIfElse]="elseBlock"> <p>Private Key <span>*</span></p></ng-template>
+                <ng-template #elseBlock></ng-template>
+
+                <ng-template [ngIf]="contrats.buyerAddress === '0x0000000000000000000000000000000000000000' " [ngIfElse]="elseBlock"><span class="icon-case"><i class="fa fa-key" aria-hidden="true"></i></span> </ng-template>
+                
+              
+              <ng-template [ngIf]="contrats.buyerAddress === '0x0000000000000000000000000000000000000000' " [ngIfElse]="elseBlock1"> <input formControlName="privateKey" type="password"></ng-template>
+              <ng-template #elseBlock1> </ng-template>
+              
+              <div class="containerbtn" style="width: 100%; height: 100px; display: flex; align-items: center; justify-content: center;">
+                <ng-template [ngIf]="contrats.buyerAddress === '0x0000000000000000000000000000000000000000' " [ngIfElse]="elseBlock2"> <button type="submit" class="bouton-contact">Acheter</button></ng-template>
+                <ng-template #elseBlock2> </ng-template>
+                
+              </div>
+            </form>
+    
+            </div>
+            
+              
+             
+            </div>
+          </div>

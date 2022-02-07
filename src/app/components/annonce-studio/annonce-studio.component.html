@@ -1,0 +1,44 @@
+<div class="alert alert-dark alert-dismissible fade show text-center mb-30"><span class="alert-close" data-dismiss="alert"></span><i class="fe-icon-award"></i> <strong style="font-size: 1.4em;">Studio</strong> </div>
+<div class="container">
+  <div *ngFor="let annonce of annonces"  class="col-xs-12 col-md-12 bootstrap snippets bootdeys">
+     <!-- product -->
+     <div *ngIf="annonce.categories.id === 'C2' "  class="product-content product-wrap clearfix">
+        <div >
+        <div  class="row">
+              <div  class="col-md-5 col-sm-12 col-xs-12">
+                 <div class="product-image"> 
+                    <img style="max-width: 100%; max-height: 100%"  src="{{annonce?.url_img}}" alt="194x228" class="img-responsive"> 
+                    
+                 </div>
+              </div>
+              <div class="col-md-7 col-sm-12 col-xs-12">
+              <div class="product-deatil">
+                    <h5 class="name">
+                       <a href="details/{{annonce.idImm}}">
+                          {{annonce?.titre_anc}} <span>{{conv(annonce?.date_anc)|date:'medium'}}</span>
+                       </a>
+                    </h5>
+                    <p class="price-container">
+                       <span>{{annonce?.prix_anc}} ETH</span>
+                    </p>
+                    <span class="tag1"></span> 
+              </div>
+              <div class="description">
+                 <p>{{annonce?.description}}</p>
+              </div>
+              <div class="product-info smart-form">
+                 <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6"> 
+                     <a  href="details/{{annonce.idImm}}" class="btn btn-style-1 btn-dark btn-block" >Plus détails</a>
+                  </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                       
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <!-- end product -->
+  </div>
+  </div>

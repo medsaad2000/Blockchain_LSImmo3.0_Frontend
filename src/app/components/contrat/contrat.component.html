@@ -1,0 +1,110 @@
+
+
+  <h1>Créer une nouvelle annonce</h1>
+  <div class="info"><a href="https://www.grandvincent-marion.fr" target="_blank">
+      <p> <i class="fa fa-warning"></i>Cette annonce va se met dans le blockckain </p>
+      <p> <i class="fa fa-warning"></i>Fais attention et verifier les informations </p>
+      <p> <i class="fa fa-warning"></i>Les informations sont inchangeables </p>
+    </a></div>
+
+
+
+  <form [formGroup]="formContrat" (submit)="submit()">
+    <h1 style="text-align: center;">Tous les champs sont obligatoires</h1>
+
+    <div class="contentform" formGroupName="immobilier">
+      <div id="sendmessage"> Your message has been sent successfully. Thank you. </div>
+
+
+      <div class="leftcontact">
+        <div class="form-group">
+          <p>Titre d'annonce<span>*</span></p>
+          <span class="icon-case"><i class="fa fa-home"></i></span>
+          <input formControlName="name" type="text" name="nom" data-rule="required"
+            data-msg="Vérifiez votre saisie sur les champs : Le champ 'Titre' doit être renseigné." placeholder="Titre" />
+          <div class="validation"></div>
+        </div>
+        <div class="form-group">
+          <p>Description <span>*</span></p>
+          <span class="icon-case"><i class="fa fa-comments-o"></i></span>
+          <textarea formControlName="description" name="message" rows="14" data-rule="required"
+            data-msg="Vérifiez votre saisie sur les champs : Le champ 'Description' doit être renseigné." placeholder="Description" ></textarea>
+          <div class="validation"></div>
+        </div>
+
+        <div class="form-group">
+          <p>Address <span>*</span></p>
+          <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+          <input formControlName="localisation" type="text" name="postal" data-rule="required"
+            data-msg="Vérifiez votre saisie sur les champs : Le champ 'Code postal' doit être renseigné." placeholder="Address"  />
+          <div class="validation"></div>
+        </div>
+
+
+
+      </div>
+
+      <div class="rightcontact">
+
+        <div class="form-group">
+          <p>Prix <span>*</span></p>
+          <span class="icon-case"><i class="fa fa-money"></i></span>
+          <input formControlName="price" type="text" name="prix" data-rule="required"
+            data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prix' doit être renseigné." placeholder="Prix"  />
+          <div class="validation"></div>
+        </div>
+
+        <div class="form-group">
+          <p>Surface <span>*</span></p>
+          <span class="icon-case"><i class="fa fa-area-chart"></i></span>
+          <input formControlName="surface" type="text" name="surface" data-rule="required"
+            data-msg="Vérifiez votre saisie sur les champs : Le champ 'Sujet' doit être renseigné." placeholder="Surface"  />
+          <div class="validation"></div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="rightcontact">
+    <form [formGroup]="formCat" (submit)="submit()">
+
+      <div class="form-group">
+        <p>Categorie <span>*</span></p>
+        <span class="icon-case"><i class="fa fa-list-alt"></i>
+        </span>
+        <select formControlName="category">
+          <option [ngValue]="null" disabled>Selectionner la categorie</option>
+          <option *ngFor="let category of category" [ngValue]="category.id">{{category.name}}</option>
+        </select>
+        <div class="validation"></div>
+      </div>
+
+    </form>
+    
+  </div>
+  
+    <div class="form-group">
+      <p>Private Key <span>*</span></p>
+      <span class="icon-case"><i class="fa fa-key" aria-hidden="true"></i>
+      </span>
+      <input formControlName="privateKey" class="inputprivate" type="password" name="privateKey" id="privateKey" data-rule="required" placeholder="Private Key" />
+      <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+      <p>Image URL <span>*</span></p>
+      <span class="icon-case"><i class="fa fa-image"></i></span>
+      <input formControlName="url" type="text" name="url" data-rule="required"
+        data-msg="Vérifiez votre saisie sur les champs : Le champ 'Sujet' doit être renseigné." placeholder="URL"  />
+      <div class="validation"></div>
+    </div>
+    <button type="submit" class="bouton-contact" >Ajouter</button>
+
+    <div class="form-group">
+      <p>Generate a URL for your picture<span></span></p>
+      <span class="icon-case"><i class="fa fa-image"></i></span>
+    <input type="file" (input)="onInput($event)">
+  </div>
+
+
+  </form>
