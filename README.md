@@ -1,5 +1,5 @@
 # LSImmo 3.0
-<div style="text-align:center">
+<div align="center">
 ![LSImmo 3 0](https://user-images.githubusercontent.com/81382178/168428289-ba0d18c3-3f2a-4f12-ba2b-5cb58494fd6d.png)
 </div>
 
