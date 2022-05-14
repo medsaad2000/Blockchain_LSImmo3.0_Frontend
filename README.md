@@ -1,7 +1,7 @@
 # LSImmo 3.0
-<div align="center">
+
 ![LSImmo 3 0](https://user-images.githubusercontent.com/81382178/168428289-ba0d18c3-3f2a-4f12-ba2b-5cb58494fd6d.png)
-</div>
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
